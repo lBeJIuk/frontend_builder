@@ -10,7 +10,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/lBeJIuk/123.git"
+    "url": "git+https://github.com/lBeJIuk/frontend_builder.git"
   },
   "keywords": [
     "test",
@@ -19,9 +19,9 @@
   "author": "lBeJIuk",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/lBeJIuk/123/issues"
+    "url": "https://github.com/lBeJIuk/frontend_builder/issues"
   },
-  "homepage": "https://github.com/lBeJIuk/123#readme",
+  "homepage": "https://github.com/lBeJIuk/frontend_builder#readme",
   "devDependencies": {
     "autoprefixer": "^6.7.7",
     "browser-sync": "^2.18.6",
