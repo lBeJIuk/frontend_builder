@@ -1,9 +1,10 @@
 'use strict';
+var timer = require('gulp-timemanager');
 
 var gulp=  require('gulp');
 var less = require('gulp-less');
 
-var browserSync = require('browser-sync');//.create();
+var browserSync = require('browser-sync');
 var reload      = browserSync.reload;
 var connectPHP = require('gulp-connect-php');
 
@@ -137,10 +138,7 @@ gulp.task('fonts', function() {
     gulp.src(path.src.fonts),
         gulp.dest(path.public.fonts)).on('error', notify.onError());
 });
-
 // ******************* Compiling
-
-
 
 //watcher
 gulp.task('watch' , function(){
@@ -151,9 +149,13 @@ gulp.task('watch' , function(){
   gulp.watch([path.watch.img], gulp.series('img'));
   gulp.watch([path.watch.php], gulp.series('php'));
   gulp.watch([path.watchPub.html , path.watchPub.js, path.watchPub.style, path.watchPub.img, path.watchPub.fonts]).on("change", reload);
+  gulp.watch([path.watchPub.html , path.watchPub.js, path.watchPub.style, path.watchPub.img, path.watchPub.fonts]).on("change", timer().count);
 });
 
-
+gulp.task('timer', function(cb) {
+  timer().init();
+  cb();
+});
 //*************************** Static server
 gulp.task('browser-sync', function() {
     browserSync.init({
@@ -188,7 +190,7 @@ gulp.task('git-host', function() {
 
 
 //task for development
-gulp.task('dev' , gulp.series('less' ,'html','js', 'fonts', gulp.parallel('watch' , 'browser-sync')));
+gulp.task('dev' , gulp.series('less' ,'html','js', 'fonts','timer', gulp.parallel('watch' , 'browser-sync')));
 
 //task for development PHP
 gulp.task('dev-php' , gulp.series('less' ,'html','php','js', 'fonts', gulp.parallel('watch' , 'browser-sync-php')));

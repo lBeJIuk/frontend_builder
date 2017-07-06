@@ -38,6 +38,7 @@
     "gulp-postcss": "^6.4.0",
     "gulp-rename": "^1.2.2",
     "gulp-rigger": "^0.5.8",
+    "gulp-timemanager": "0.0.6",
     "gulp-uglify": "^2.1.2",
     "imagemin-pngquant": "^5.0.0",
     "postcss": "^5.2.17",
@@ -45,7 +46,8 @@
     "rimraf": "^2.6.1",
     "stream-combiner2": "^1.1.1",
     "stylelint": "^7.10.1",
-    "stylelint-config-standard": "^16.0.0"
+    "stylelint-config-standard": "^16.0.0",
+    "vinyl": "^2.1.0"
   },
   "dependencies": {
     "node-php-server": "^0.1.2"
