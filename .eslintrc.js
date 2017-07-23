@@ -3,28 +3,12 @@ module.exports = {
         "browser": true,
         "es6": true
     },
-    "extends": "eslint:recommended",
-    "parserOptions": {
-        "sourceType": "module"
-    },
-    "rules": {
-      "no-console" : 0,
-        "indent": [
-            "error",
-            2
-        ],
-        "linebreak-style": [
-            "error",
-            "unix"
-        ],
-        "quotes": [
-            "error",
-            "single"
-        ],
-        "semi": [
-            "error",
-            "always"
-        ]
-    }
-};
-
+    "extends": "google",
+        "rules": {
+          "no-console" : 0,
+          "max-len" : 0,
+          "require-jsdoc" : 0,
+          "space-before-function-paren" : ["error", "always"],
+          "switch-colon-spacing": 0
+        }
+}
